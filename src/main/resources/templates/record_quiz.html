@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Quiz</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+
+<div class="container center">
+<h1>De Recordquiz</h1>
+
+<form action="/record_quizForm">
+
+    <p>
+        <label for="naam">Naam:</label>
+        <input type="text" name="naam" id="naam">
+    </p>
+
+    <p>
+        <input class="button1" type="submit" name="raadJaarKnop" value="Raad het Jaar">
+    </p>
+    <p>
+        <input class="button1" type="submit" name="randomRecordKnop" value="Willekeurig record">
+    </p>
+    <p>
+        <input class="button1" type="submit" name="record_raadAtleetKnop" value="Raad de atleet">
+    </p>
+    <p>
+        <input class="button1" type="submit" name="highscore" value="Dit zijn de score's">
+    </p>
+
+
+</form>
+</div>
+
+<p class="center"><a href="/">Terug naar beginapagina</a></p>
+</body>
+</html>

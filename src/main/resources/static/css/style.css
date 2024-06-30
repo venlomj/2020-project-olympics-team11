@@ -1,0 +1,91 @@
+
+
+body{
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.center{
+  text-align: center;
+}
+.titel{
+  font-size: 35px;
+}
+
+.kaderhomepage{
+  display: inline-block;
+  padding: 2rem;
+}
+
+.kaderhomepage a{
+  text-decoration: none;
+  display: block;
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 2px;
+  transition: 0.2s linear all;
+  box-shadow: 5px 5px 5px black;
+}
+
+.kaderhomepage a:hover{
+  color: white;
+  background-color: black;
+  opacity: 88%;
+}
+
+.kaderhomepage p{
+  margin: 2rem;
+}
+
+.quiz{
+
+}
+
+.padding{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.button1{
+  text-align: center;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 2px;
+  transition: 0.2s linear all;
+  box-shadow: 5px 5px 5px black;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button1:hover{
+  background-color: black;
+  color: white;
+}
+
+
+.logoklein{
+  height: 150px;
+  width: auto;
+}
+
+.aknop {
+  text-decoration: none;
+  display: block;
+  color: black;
+  padding: 0.5rem;
+  border: 1px solid #000;
+  border-radius: 2px;
+  transition: 0.2s linear all;
+  box-shadow: 5px 5px 5px black;
+}
+
+.container{
+  margin: 1rem;
+  padding: 1rem;
+}

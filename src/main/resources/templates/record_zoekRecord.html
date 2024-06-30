@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Zoek record</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+    <div class="row">
+
+<div class="col-lg-6 kaderhomepage">
+        <form action="/record_zoeken">
+            <p>
+                <label for="zoekRecord">Record:</label>
+                <input type="text" name="zoekRecord" id="zoekRecord">
+                <input type="submit" name="zoekRecordKnop" value="zoek record">
+            </p>
+            <p>
+                <label for="zoekJaartal">Jaartal:</label>
+                <input type="text" name="zoekJaartal" id="zoekJaartal">
+                <input type="submit" name="zoekJaartalKnop" value="zoek jaartal">
+            </p>
+            <p>
+                <label for="zoekPlaats">Stad:</label>
+                <input type="text" name="zoekPlaats" id="zoekPlaats">
+                <input type="submit" name="zoekPlaatsKnop" value="zoek stad">
+            </p>
+            <p>
+
+                <select name="recordStadIndex">
+                    <option value="-1">
+                        kies stad
+                    </option>
+                    <option th:each=" stad : ${steden}"
+                            th:text="${stad}"
+                            th:value="${stadStat.index}">
+                    </option>
+                </select>
+
+                <input type="submit" name="zoekStadKnop" value="zoek stad">
+            </p>
+
+        </form>
+</div>
+        <div class="col-lg-6 kaderhomepage">
+            <p><a href="/record_detail1record">Toon 10e record</a></p>
+
+            <p><a href="/record_quiz">Speel de quiz</a></p>
+
+            <p><a href="/record_lijstRecords">Toon alle records</a></p>
+        </div>
+    </div>
+    <p><a href="/">Terug naar beginpagina</a></p>
+</div>
+
+
+
+</body>
+</html>

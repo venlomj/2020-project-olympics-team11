@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Wijzig atleet</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+
+<div class="container center">
+<form action="/atleet_wijzigAtleetForm">
+    <p><label for="wijzigNaam">
+        Naam:
+    </label>
+        <input type="text" name="wijzigNaam" th:value="${naam}" id="wijzigNaam">
+    </p>
+    <p><label for="wijzigGeslacht">
+        Geslacht:
+    </label>
+        <input type="text" name="wijzigGeslacht" th:value="${geslacht}" id="wijzigGeslacht">
+    </p>
+    <p>
+    <input type="hidden" name="wijzigAtleetid" th:value="${atleetid}">
+    </p>
+    <p>
+        <input type="hidden" name="wijzigLandid" th:value="${landid}">
+    </p>
+    <p><input type="submit" value="Wijzig atleet" name="wijzigAtleet"></p>
+</form>
+
+<a href="/">Terug naar beginpagina</a>
+</div>
+</body>
+</html>

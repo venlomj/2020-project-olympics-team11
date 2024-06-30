@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Quiz</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+
+<div class="container center">
+<form action="/atleet_gebruiker_quiz">
+    <p>
+        <label for="atleetGebruikerNaam">Naam:</label>
+        <input type="text" name="atleetGebruikerNaam" id="atleetGebruikerNaam">
+    </p>
+
+    <p>
+        <input class="button1" type="submit" name="atleet_raadLandKnop" value="Raad het land van de 15de atleet">
+    </p>
+    <p>
+        <input class="button1"  type="submit" name="atleet_raadAtleetKnop" value="Raad het land van een willekeurige atleet">
+    </p>
+
+</form>
+
+<p><a href="/">Terug naar beginpagina</a></p>
+</div>
+</body>
+</html>

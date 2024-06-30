@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Raad de atleet</title>
+</head>
+
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+<h1 th:text="'Welkom ' + ${atleetGebruikerNaam}"></h1>
+<h2>Raad het land van een willekeurig atleet.</h2>
+<h3 th:text="${atleet.getNaam()}"></h3>
+<form action="/atleet_raadAtleet">
+<p>
+    <select name="atleetLandIndex">
+    <option value="-1">
+        kies land
+    </option>
+    <option th:each="landen : ${landen}"
+            th:text="${landen.getNaam()}"
+            th:value="${landenStat.index}">
+    </option>
+</select>
+</p>
+
+<p>
+    <input type="submit" name="willekeurigAtleet" value="Raad land">
+</p>
+</form>
+<p><a href="/">Terug naar beginpagina</a></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Lijst atleet</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+
+<div class="container align-content-center">
+<p><a th:href="@{/atleet_nieuweAtleet}"><img src="css\add.gif"/></a></p>
+
+<table border="0">
+    <tr th:each="atleet : ${atleten}">
+        <td th:text = "${atleet.getNaam()} + ' ' + ${atleet.getGeslacht()}" ></td>
+        <td><a th:href="@{/atleet_wijzigAtleet(naam = ${atleet.getNaam()},geslacht = ${atleet.getGeslacht()}, atleetid = ${atleet.getAtleetid()}, landid = ${atleet.getLandid()})}"><img src="css/edit.gif"></a>
+            <a th:href="@{/atleet_verwijderAtleet(atleetid=${atleet.getAtleetid()})}"><img src="css/delete.gif"></a>
+        </td>
+    </tr>
+
+</table>
+<p class="center"><a href="/">Terug naar de beginpagina</a></p>
+</div>
+</body>
+</html>

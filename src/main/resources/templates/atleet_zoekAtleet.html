@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Zoek atleet</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+    <div class="row">
+        <div class="col-lg-6 kaderhomepage justify-content-center">
+            <form action="/atleet_zoeken">
+                <p>
+                    <label for="atleetNaam">Naam:</label>
+                    <input type="text" name="atleetNaam" id="atleetNaam">
+
+                    <input class="button" type="submit" name="zoekNaam" value="zoek naam">
+                </p>
+                <p>
+                    <label for="atleetGeslacht">geslacht:</label>
+                    <input type="text" name="atleetGeslacht" id="atleetGeslacht">
+
+                    <input class="button" type="submit" name="zoekGeslacht" value="zoek geslacht">
+                </p>
+                <p>
+                    <select name="atleetLandIndex">
+                        <option value="-1">
+                            kies land
+                        </option>
+                        <option th:each="landen : ${landen}"
+                                th:text="${landen.getNaam()}"
+                                th:value="${landenStat.index}">
+                        </option>
+                    </select>
+
+                    <input class="button" type="submit" name="zoekLand" value="zoek land">
+                </p>
+
+
+            </form>
+
+
+            <form action="/recordsAtleet">
+                <p>
+                    <select name="atleetRecordIndex">
+                        <option value="-1">
+                            Kies atleet
+                        </option>
+                        <option th:each="atleet : ${atleten}" th:text="${atleet.getNaam()}"
+                                th:value="${atleet.getAtleetid()}"></option>
+                    </select>
+
+                    <input class="button" type="submit" name="recordsAtleet" value="Zoek info van atleet">
+                </p>
+            </form>
+        </div>
+        <div class="kaderhomepage col-lg-6 justify-content-center">
+            <p><a class="aknop" href="/atleet_toonatleet">Toon atleet</a></p>
+
+            <p><a class="aknop" href="/atleet_lijstAtleten">Toon alle atleten</a></p>
+
+            <p><a class="aknop" href="/atleet_lijstAdminAtleet">Lijst beheren van atleet</a></p>
+
+            <p><a class="aknop" href="/atleet_quiz">Speel de quiz</a></p>
+        </div>
+    </div>
+    <a href="/">Terug naar beginpagina</a>
+</div>
+
+</body>
+</html>

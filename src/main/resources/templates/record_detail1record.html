@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Detail</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+
+<div class="container center">
+
+<p th:if="${record != null}"
+   th:text="'Dit is het record dat je zoekt: ' + ${record.getSport()}"></p>
+<p th:if="${record != null}"
+   th:text="'Dit is het record dat je zoekt ' + ${record.getRecordid()} + ') ' + ${record.getSport()} + ' op ' + ${record.getDatum()} + ' met een record van ' + ${record.getRecord()}"></p>
+
+<p th:if="${record == null}"
+   th:text="'Geen record gevonden'"></p>
+
+</div>
+<p class="center"><a href="/">Terug naar beginapagina</a></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Admin landen</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+
+
+
+
+<div class="container align-content-center">
+<h2>Landen</h2>
+<p><a th:href="@{/nieuwLand}"><img src="css\add.gif"/></a></p>
+
+<table border="0">
+<tr th:each="land : ${landen}">
+    <td th:text = "${land.getNaam()}" ></td>
+    <td><a th:href="@{/wijzigLand(landid=${land.getLandid()}, naam=${land.getNaam()} )}"><img src="css/edit.gif"></a>
+        <a th:href="@{/verwijderLand(landid=${land.getLandid()})}"><img src="css/delete.gif"></a>
+    </td>
+</tr>
+
+</table>
+
+
+<p class="center"><a href="/">Terug naar beginpagina</a></p>
+</div>
+</body>
+</html>
+

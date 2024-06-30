@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Raad het land</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+<h2 th:text="'Welkom ' + ${atleetGebruikerNaam}"></h2>
+<form action="/atleet_antwoordLand">
+    <p th:text="${atleet.getNaam()}"></p>
+<p>
+    <label for="atleet_15deLand">Land:</label>
+    <input type="text" name="atleet_15deLand" id="atleet_15deLand">
+</p>
+
+<p>
+    <input type="submit" name="atleet_15deLandKnop" value="Raad land">
+</p>
+</form>
+
+<p><a href="/">Terug naar beginpagina</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Raad jaar</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+<h1>Raad het jaar</h1>
+<h2 th:text="'Welkom ' + ${naam}"></h2>
+
+<p th:text="'Het ' + ${record.getNaam()} + ' van ' + ${record.getSport()} + ' werd vebroken door een ' + ${record.getGeslacht()} + ' in een tijd van ' + ${record.getRecord()}"></p>
+
+<!--<p th:text="${record.getNaam()}"></p>-->
+<!--<p th:text="${record.getSport()}"></p>-->
+<!--<p th:text="${record.getGeslacht()}"></p>-->
+<!--<p th:text="${record.getRecord()}"></p>-->
+<h2>Raad het jaar</h2>
+<form action="/antwoord">
+
+    <p>
+        <label for="antwoord">Antwoord:</label>
+        <input type="text" name="antwoord" id="antwoord" placeholder="Jaar">
+    </p>
+
+    <p>
+        <input type="submit" name="antwoord" value="Antwoord">
+    </p>
+
+
+</form>
+
+</div>
+<p class="center"><a href="/">Terug naar beginpagina</a></p>
+</body>
+</html>

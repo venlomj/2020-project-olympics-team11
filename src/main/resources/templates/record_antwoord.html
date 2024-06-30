@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Antwoord</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+<h2>Het antwoord dat jij gaf was:</h2>
+<p th:text="${antwoordbericht}"></p>
+<h2>Wenst u verder te spelen?</h2>
+<form action="/verderSpelenForm">
+<p>
+    <input type="submit" name="record_verderSpelenKnop" value="Ja">
+    <input type="submit" name="record_nietVerderSpelenKnop" value="Nee">
+</p>
+</form>
+
+
+<h3>Wenst u uw score op te slaan?</h3>
+<form action="/scoreOpslaan">
+<p>
+    <input type="submit" name="scoreOpslaanJa" value="Ja">
+    <input type="submit" name="scoreOpslaanNee" value="Nee">
+</p>
+</form>
+</div>
+<p class="center"><a href="/">Terug naar beginpagina</a></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--    CSS LINKS-->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <title>Raad atleet</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <p class="center"><img class="logoklein" src="css/logo.png" alt="logo"></p>
+</div>
+<div class="container center">
+<h2 th:text="'Welkom ' + ${naam}"></h2>
+
+<p th:text="'Het ' + ${record.getNaam()} + ' van ' + ${record.getSport()} + ' werd vebroken door een ' + ${record.getGeslacht()} + ' in een tijd van ' + ${record.getRecord()}"></p>
+<form action="record_quiz_atleetForm">
+    <p>
+        <select name="recordAtleetIndex">
+            <option value="-1">
+                kies atleet
+            </option>
+            <option th:each=" atleet : ${atleten}"
+                    th:text="${atleet.getNaam()}"
+                    th:value="${atleetStat.index}">
+            </option>
+        </select>
+
+        <input type="submit" name="record_kiesAtleetKnop" value="Kies atleet">
+
+    </p>
+
+</form>
+</div>
+</body>
+</html>
